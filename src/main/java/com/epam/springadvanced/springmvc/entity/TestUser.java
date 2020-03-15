@@ -13,19 +13,18 @@ import lombok.ToString;
 @Entity
 @RequiredArgsConstructor
 @NoArgsConstructor
-public class Company {
+public class TestUser {
 
   @Id
   @NonNull
   private Long id;
 
-//  @OneToOne
-//  private Phone phone;
-
-//  @OneToOne
-//  private Long phoneId
-
   @NonNull
   private String name;
+
+  @NonNull
+  private String surname;
+
+  private String patronymic;
 
 }

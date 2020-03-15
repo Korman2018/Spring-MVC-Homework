@@ -5,14 +5,14 @@ import com.epam.springadvanced.springmvc.repository.UserRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@RequiredArgsConstructor
 @Service
 public class UserServiceImpl implements UserService {
 
-  private final UserRepository userRepository;
+  @Autowired
+  private UserRepository userRepository;
 
   @Override
   public List<User> getAllUsers() {
@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public void addUsers(final List<User> users) {
+  public void addUsers(List<User> users) {
     userRepository.saveAll(users);
   }
 }
