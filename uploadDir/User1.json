@@ -1,0 +1,19 @@
+{
+  "name": "Ivan",
+  "surname": "Ivanov",
+  "patronymic": "Ivanovich",
+  "phones": [
+    {
+      "number": "123456",
+      "company": {
+        "name": "MTS"
+      }
+    },
+    {
+      "number": "654321",
+      "company": {
+        "name": "Beeline"
+      }
+    }
+  ]
+}

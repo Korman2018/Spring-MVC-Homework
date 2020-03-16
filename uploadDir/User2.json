@@ -1,0 +1,19 @@
+{
+  "name": "Petr",
+  "surname": "Petrov",
+  "patronymic": "Petrovich",
+  "phones": [
+    {
+      "number": "2222222",
+      "company": {
+        "name": "Megafon"
+      }
+    },
+    {
+      "number": "333333",
+      "company": {
+        "name": "MTS"
+      }
+    }
+  ]
+}
