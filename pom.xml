@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <description>homework spring-mvc for course spring advance</description>
+  <groupId>com.epam.spring-advanced</groupId>
   <artifactId>spring-mvc</artifactId>
+  <modelVersion>4.0.0</modelVersion>
+  <name>spring-mvc</name>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <parent>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <relativePath/>
+    <version>2.2.5.RELEASE</version>
+  </parent>
+
+  <properties>
+    <java.version>1.8</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
   <build>
     <plugins>
       <plugin>
@@ -30,17 +50,6 @@
       <groupId>org.projectlombok</groupId>
       <optional>true</optional>
     </dependency>
-    <!--    <dependency>-->
-    <!--      <groupId>org.springframework.boot</groupId>-->
-    <!--      <artifactId>spring-boot-starter-test</artifactId>-->
-    <!--      <scope>test</scope>-->
-    <!--      <exclusions>-->
-    <!--        <exclusion>-->
-    <!--          <groupId>org.junit.vintage</groupId>-->
-    <!--          <artifactId>junit-vintage-engine</artifactId>-->
-    <!--        </exclusion>-->
-    <!--      </exclusions>-->
-    <!--    </dependency>-->
 
     <dependency>
       <artifactId>spring-boot-starter-freemarker</artifactId>
@@ -53,22 +62,6 @@
       <scope>runtime</scope>
     </dependency>
 
-    <!--    <dependency>-->
-    <!--      <groupId>org.hibernate</groupId>-->
-    <!--      <artifactId>hibernate-core</artifactId>-->
-    <!--      <version>${hibernate.version}</version>-->
-    <!--    </dependency>-->
-    <!--    <dependency>-->
-    <!--      <groupId>org.hibernate</groupId>-->
-    <!--      <artifactId>hibernate-entitymanager</artifactId>-->
-    <!--      <version>${hibernate.version}</version>-->
-    <!--    </dependency>-->
-    <!--    <dependency>-->
-    <!--      <groupId>org.hibernate.javax.persistence</groupId>-->
-    <!--      <artifactId>hibernate-jpa-2.1-api</artifactId>-->
-    <!--      <version>1.0.2.Final</version>-->
-    <!--    </dependency>-->
-
     <dependency>
       <artifactId>jackson-datatype-jsr310</artifactId>
       <groupId>com.fasterxml.jackson.datatype</groupId>
@@ -80,36 +73,12 @@
       <version>5.5.13.1</version>
     </dependency>
 
-    <!--    <dependency>-->
-    <!--      <groupId>com.github.librepdf</groupId>-->
-    <!--      <artifactId>openpdf</artifactId>-->
-    <!--      <version>1.2.3</version>-->
-    <!--    </dependency>-->
-
     <dependency>
       <artifactId>commons-io</artifactId>
       <groupId>commons-io</groupId>
     </dependency>
 
   </dependencies>
-  <description>homework spring-mvc for course spring advance</description>
-  <groupId>com.epam.spring-advanced</groupId>
-  <modelVersion>4.0.0</modelVersion>
-  <name>spring-mvc</name>
 
-  <parent>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <groupId>org.springframework.boot</groupId>
-    <relativePath/>
-    <version>2.2.5.RELEASE</version>
-  </parent>
-
-  <properties>
-    <java.version>1.8</java.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-  </properties>
-
-  <version>0.0.1-SNAPSHOT</version>
 
 </project>

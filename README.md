@@ -14,7 +14,7 @@ Explanations:
 
 Endpoints:
   HTTP GET: localhost - batch load user files. Click the 'Choose Files' button, then click 'Upload files' button. This will load the data into the database.  
-            Each user in separate file. May duplicate name, surname and patronymic. Don'd have id. 
+            Each user in separate file. May duplicate name, surname and patronymic. Don't have id. 
             Examples in dir: resources/userExamples. Temporary uploaded data will be in 'uploadDir' dir. Every app launch will clear this directory!
   HTTP GET: localhost/getUsers - get all users info.
   HTTP GET: localhost/getUsersPdf - get all users info as PDF. Accept 'Accept=application/pdf' headers only!
