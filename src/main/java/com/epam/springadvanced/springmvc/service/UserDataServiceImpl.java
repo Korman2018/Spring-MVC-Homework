@@ -104,7 +104,8 @@ public class UserDataServiceImpl implements UserDataService {
         .map(Collection::stream)
         .map(stream -> stream
             .map(phone -> {
-              final PhoneEntity phoneEntity = new PhoneEntity(phone.getNumber(), getCompanyEntity(phone.getCompany()));
+              final PhoneEntity phoneEntity = new PhoneEntity(phone.getNumber());
+              phoneEntity.setCompanyEntity(getCompanyEntity(phone.getCompany(), phoneEntity));
               phoneEntity.setUser(entity);
               return phoneEntity;
             })
@@ -122,8 +123,11 @@ public class UserDataServiceImpl implements UserDataService {
   }
 
   @NonNull
-  private CompanyEntity getCompanyEntity(@NonNull Company company) {
-    return new CompanyEntity(company.getName());
+  private CompanyEntity getCompanyEntity(@NonNull Company company, @NonNull PhoneEntity phoneEntity) {
+    final CompanyEntity entity = new CompanyEntity(company.getName());
+    entity.setPhone(phoneEntity);
+
+    return entity;
   }
 
   @NonNull

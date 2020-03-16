@@ -1,0 +1,19 @@
+{
+  "name": "Semen",
+  "surname": "Semenov",
+  "patronymic": "Semenovich",
+  "phones": [
+    {
+      "number": "8888",
+      "company": {
+        "name": "Tele2"
+      }
+    },
+    {
+      "number": "999999",
+      "company": {
+        "name": "Beeline"
+      }
+    }
+  ]
+}

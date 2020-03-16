@@ -1,7 +1,7 @@
 package com.epam.springadvanced.springmvc.controller;
 
 import com.epam.springadvanced.springmvc.service.UserDataService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 @Controller
+@RequiredArgsConstructor
 public class UIController {
 
-  @Autowired
-  private UserDataService userDataService;
+  private final UserDataService userDataService;
 
   @RequestMapping("/")
   public String forwardUpload() {
@@ -24,6 +24,7 @@ public class UIController {
   @PostMapping(value = "/")
   public String uploadFiles(@RequestParam("uploadedFiles") MultipartFile[] uploadedFiles) {
     userDataService.addUsers(uploadedFiles);
+
     return "redirect:/";
   }
 

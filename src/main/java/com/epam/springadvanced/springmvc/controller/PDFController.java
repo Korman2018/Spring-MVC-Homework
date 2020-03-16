@@ -3,7 +3,7 @@ package com.epam.springadvanced.springmvc.controller;
 import com.epam.springadvanced.springmvc.exception.NotSupportedHeaderException;
 import com.epam.springadvanced.springmvc.service.UserDataService;
 import java.io.ByteArrayInputStream;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -12,10 +12,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
+@RequiredArgsConstructor
 public class PDFController {
 
-  @Autowired
-  private UserDataService userDataService;
+  private final UserDataService userDataService;
 
   @GetMapping(value = "/getUsersPdf", produces = MediaType.APPLICATION_PDF_VALUE)
   public ResponseEntity<InputStreamResource> getUsersPdf() {

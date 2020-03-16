@@ -13,10 +13,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import lombok.ToString;
 
 @Data
-@ToString
 @Entity
 @RequiredArgsConstructor
 @NoArgsConstructor
@@ -33,7 +31,6 @@ public class PhoneEntity {
   @NonNull
   private String number;
 
-  @NonNull
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "companyEntity_id", referencedColumnName = "id")
   private CompanyEntity companyEntity;
