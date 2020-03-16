@@ -1,6 +1,7 @@
 package com.epam.springadvanced.springmvc.entity;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -10,16 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
 
 @Data
-@ToString
 @Entity
-@RequiredArgsConstructor
-@NoArgsConstructor
 public class PhoneEntity {
 
   @Id
@@ -30,12 +24,12 @@ public class PhoneEntity {
   @JoinColumn(name = "userEntity_id")
   private UserEntity user;
 
-  @NonNull
+  @Column(nullable = false)
   private String number;
 
-  @NonNull
+  //  @Column(nullable = false)
   @OneToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name = "companyEntity_id", referencedColumnName = "id")
+  @JoinColumn(name = "companyEntity_id", referencedColumnName = "id", unique = true, nullable = false)
   private CompanyEntity companyEntity;
 
 }

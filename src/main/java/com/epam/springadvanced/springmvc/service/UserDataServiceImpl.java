@@ -83,9 +83,13 @@ public class UserDataServiceImpl implements UserDataService {
 
   @NonNull
   private UserEntity mapUserDataToEntity(@NonNull UserData userData) {
-    final UserEntity entity = new UserEntity(userData.getName(), userData.getSurname());
-    entity.setPhones(getPhoneEntities(userData.getPhones(), entity));
+
+//    final UserEntity entity = new UserEntity(userData.getName(), userData.getSurname());
+    final UserEntity entity = new UserEntity();
+    entity.setName(userData.getName());
+    entity.setSurname(userData.getSurname());
     entity.setPatronymic(userData.getPatronymic());
+    entity.setPhones(getPhoneEntities(userData.getPhones(), entity));
 
     return entity;
   }
@@ -103,12 +107,15 @@ public class UserDataServiceImpl implements UserDataService {
     return Optional.ofNullable(phones)
         .map(Collection::stream)
         .map(stream -> stream
-            .map(phone -> {
-              final PhoneEntity phoneEntity = new PhoneEntity(phone.getNumber(), getCompanyEntity(phone.getCompany()));
-              phoneEntity.setUser(entity);
-              return phoneEntity;
-            })
-            .collect(Collectors.toList())
+                .map(phone -> {
+//              final PhoneEntity phoneEntity = new PhoneEntity(phone.getNumber(), getCompanyEntity(phone.getCompany()));
+                  final PhoneEntity phoneEntity = new PhoneEntity();
+                  phoneEntity.setNumber(phone.getNumber());
+                  phoneEntity.setCompanyEntity(getCompanyEntity(phone.getCompany()));
+                  phoneEntity.setUser(entity);
+                  return phoneEntity;
+                })
+                .collect(Collectors.toList())
         ).orElse(Collections.emptyList());
   }
 
@@ -123,7 +130,9 @@ public class UserDataServiceImpl implements UserDataService {
 
   @NonNull
   private CompanyEntity getCompanyEntity(@NonNull Company company) {
-    return new CompanyEntity(company.getName());
+    final CompanyEntity entity = new CompanyEntity();
+    entity.setName(company.getName());
+    return entity;
   }
 
   @NonNull

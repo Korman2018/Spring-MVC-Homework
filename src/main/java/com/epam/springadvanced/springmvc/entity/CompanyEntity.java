@@ -1,21 +1,15 @@
 package com.epam.springadvanced.springmvc.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
 
 @Data
-@ToString
 @Entity
-@RequiredArgsConstructor
-@NoArgsConstructor
 public class CompanyEntity {
 
   @Id
@@ -25,7 +19,7 @@ public class CompanyEntity {
   @OneToOne(mappedBy = "companyEntity")
   private PhoneEntity phone;
 
-  @NonNull
+  @Column(nullable = false, unique = true)
   private String name;
 
 }
